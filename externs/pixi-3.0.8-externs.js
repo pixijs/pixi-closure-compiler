@@ -1,10 +1,11 @@
-//TODO - add missing types
-//TODO - correct all unrecognised types
-
+/**
+ * @fileoverview Externs to use for PIXI
+ * @externs
+ */
 var PIXI = {};
 
 /**
- * The DOMHighResTimeStamp type is a double and is used to store a time value. 
+ * The DOMHighResTimeStamp type is a double and is used to store a time value.
  * @constructor
  */
 var DOMHighResTimeStamp = function () {};
@@ -141,7 +142,7 @@ PIXI.VERSION;
  */
 var PixiDetectRendererOptions;
 
-/** 
+/**
  * @param {number} width
  * @param {number} height
  * @param {PixiDetectRendererOptions=} options
@@ -171,7 +172,7 @@ var PixiFontStyleOptions;
  */
 var PixiBitmapTextStyleOptions;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.Container}
  * @param {string} text
@@ -337,7 +338,7 @@ PIXI.extras.BitmapText.prototype.getLocalBounds = function () {};
  */
 var PixiMovieClipTextures;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.Sprite}
  * @param {Array.<PIXI.Texture>|Array.<PixiMovieClipTextures>} textures
@@ -528,7 +529,7 @@ PIXI.extras.MovieClip.prototype.play = function () {};
 
 PIXI.extras.MovieClip.prototype.stop = function () {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.Sprite}
  * @param {PIXI.Texture} texture
@@ -735,7 +736,7 @@ PIXI.filters.AsciiFilter.prototype.size;
  */
 PIXI.filters.AsciiFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -766,7 +767,7 @@ PIXI.filters.BloomFilter.prototype.padding;
  */
 PIXI.filters.BloomFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @param {number} dirX
  * @param {number} dirY
@@ -804,7 +805,7 @@ PIXI.filters.BlurDirFilter.prototype.passes;
  */
 PIXI.filters.BlurDirFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -835,7 +836,7 @@ PIXI.filters.BlurFilter.prototype.padding;
  */
 PIXI.filters.BlurFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1070,7 +1071,7 @@ PIXI.filters.ColorMatrixFilter.prototype.toBGR = function (multiply) {};
  */
 PIXI.filters.ColorMatrixFilter.prototype.vintage = function (multiply) {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1087,7 +1088,7 @@ PIXI.filters.ColorStepFilter.prototype.step;
  */
 PIXI.filters.ColorStepFilter.prototype.padding;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  * @param {Array.<number>} matrix
@@ -1121,7 +1122,7 @@ PIXI.filters.ConvolutionFilter.prototype.uniforms;
  */
 PIXI.filters.ConvolutionFilter.prototype.width;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1137,7 +1138,7 @@ PIXI.filters.CrossHatchFilter.prototype.padding;
  */
 PIXI.filters.CrossHatchFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  * @param {PIXI.Sprite} sprite
@@ -1160,7 +1161,7 @@ PIXI.filters.DisplacementFilter.prototype.padding;
  */
 PIXI.filters.DisplacementFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1186,7 +1187,7 @@ PIXI.filters.DotScreenFilter.prototype.scale;
  */
 PIXI.filters.DotScreenFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1237,7 +1238,7 @@ PIXI.filters.DropShadowFilter.prototype.padding;
  */
 PIXI.filters.DropShadowFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1258,7 +1259,7 @@ PIXI.filters.GrayFilter.prototype.padding;
  */
 PIXI.filters.GrayFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1279,7 +1280,7 @@ PIXI.filters.InvertFilter.prototype.padding;
  */
 PIXI.filters.InvertFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1300,7 +1301,7 @@ PIXI.filters.NoiseFilter.prototype.padding;
  */
 PIXI.filters.NoiseFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1320,7 +1321,7 @@ PIXI.filters.PixelateFilter.prototype.size;
  */
 PIXI.filters.PixelateFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1351,7 +1352,7 @@ PIXI.filters.RGBSplitFilter.prototype.red;
  */
 PIXI.filters.RGBSplitFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1372,7 +1373,7 @@ PIXI.filters.SepiaFilter.prototype.sepia;
  */
 PIXI.filters.SepiaFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1403,7 +1404,7 @@ PIXI.filters.ShockwaveFilter.prototype.time;
  */
 PIXI.filters.ShockwaveFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1418,7 +1419,7 @@ PIXI.filters.SmartBlurFilter.prototype.padding;
  */
 PIXI.filters.SmartBlurFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1456,7 +1457,7 @@ PIXI.filters.TiltShiftAxisFilter.prototype.uniforms;
 
 PIXI.filters.TiltShiftAxisFilter.prototype.updateDelta = function () {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1492,7 +1493,7 @@ PIXI.filters.TiltShiftFilter.prototype.start;
  */
 PIXI.filters.TiltShiftFilter.prototype.uniforms;
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.filters.TiltShiftAxisFilter}
  */
@@ -1500,7 +1501,7 @@ PIXI.filters.TiltShiftXFilter = function () {};
 
 PIXI.filters.TiltShiftXFilter.prototype.updateDelta = function () {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.filters.TiltShiftAxisFilter}
  */
@@ -1508,7 +1509,7 @@ PIXI.filters.TiltShiftYFilter = function () {};
 
 PIXI.filters.TiltShiftYFilter.prototype.updateDelta = function () {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.AbstractFilter}
  */
@@ -1545,7 +1546,7 @@ PIXI.filters.TwistFilter.prototype.uniforms;
 
 PIXI.interaction = {};
 
-/** 
+/**
  * @constructor
  */
 PIXI.interaction.InteractionData = function () {};
@@ -1583,7 +1584,7 @@ PIXI.interaction.InteractionData.prototype.getLocalPosition = function (displayO
  */
 var InteractionManagerOptions;
 
-/** 
+/**
  * @constructor
  * @param {PIXI.CanvasRenderer|PIXI.WebGLRenderer} renderer
  * @param {InteractionManagerOptions=} options
@@ -1707,7 +1708,7 @@ PIXI.loaders = {};
  * @param {number=} concurrency
  */
 PIXI.loaders.ResourceLoader = function (baseUrl, concurrency) {};
-/** 
+/**
  * @constructor
  * @extends PIXI.loaders.ResourceLoader
  * @param {string=} baseUrl
@@ -1773,7 +1774,7 @@ PIXI.loaders.resources = {};
 
 PIXI.mesh = {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.Container}
  * @param {PIXI.Texture} texture
@@ -1945,7 +1946,7 @@ PIXI.mesh.Mesh.prototype.containsPoint = function (point) {};
  */
 PIXI.mesh.Mesh.prototype.getBounds = function (matrix) {};
 
-/** 
+/**
  * @constructor
  * @extends {PIXI.Shader}
  * @param {PIXI.ShaderManager} shaderManager
@@ -5206,7 +5207,7 @@ PIXI.WebGLRenderer.prototype.shaderManager;
 /**
  * Manages the stencil buffer
  * @constructor
- * @param {PIXI.WebGLRenderer} renderer 
+ * @param {PIXI.WebGLRenderer} renderer
  */
 PIXI.StencilManager = function (renderer) {};
 
@@ -5282,7 +5283,7 @@ PIXI.WebGLRenderer.prototype.updateTexture = function (texture) {};
 *                     THESE ARE NEEDED BECAUSE ARE EXTENDED ABOVE
 --------------------------------------------------------------------------------------------------------*/
 
-/** 
+/**
  * @constructor
  */
 PIXI.EventEmitter = function () {};
