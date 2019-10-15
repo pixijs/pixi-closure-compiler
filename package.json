@@ -1,0 +1,29 @@
+{
+  "name": "pixi-closure-compiler",
+  "version": "1.0.0",
+  "description": "PIXI Google Closure",
+  "main": "test/src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "gulp gcc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtalon83/pixi-closure-compiler.git"
+  },
+  "author": "rtalon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtalon83/pixi-closure-compiler/issues"
+  },
+  "homepage": "https://github.com/rtalon83/pixi-closure-compiler#readme",
+  "dependencies": {
+    "google-closure-compiler": "^20190929.0.0",
+    "gulp": "^4.0.2",
+    "gulp-closure-compiler": "^0.4.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-util": "^3.0.8"
+  }
+}
