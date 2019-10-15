@@ -7,25 +7,28 @@ externs:
     pixi-3.0.8-externs.js    
     pixi-4.x-externs.js
 
-test
+test:
         
-        libs ---- pixi.js / pixi.min.js
-        out  ---- index.js (clousured)
-        src  ---- index.js
-        index.html
+    libs ---- pixi.js / pixi.min.js
+    out  ---- index.js (clousured)
+    src  ---- index.js
+    index.html
 
 Test options ( in this case I used PIXI 4.8.6 )
 
 To generate example, you can write:
-1 - gulp gcc
-2 - npm run build
+
+- gulp gcc
+- npm run build
 
 To launch a browser for testing different params. You can write more.
-3 - Launch any http-server for test index.html
+
+- Launch any http-server for test index.html
 
 TIPS:
 
 You must use 'window' for test unused objects, for examples:
+
 window["rectangle"] = new PIXI.Rectangle(); // test PIXI.Rectangle.
 
 -------------------------------------------------------------------------------------------------------------

@@ -28,6 +28,10 @@ var Resource;
  */
 Resource.prototype.progressChunk;
 
+/**
+
+ * @enum {string}
+ */
 Resource.XHR_RESPONSE_TYPE = {
     DEFAULT: {},
     BUFFER: {},
@@ -37,6 +41,9 @@ Resource.XHR_RESPONSE_TYPE = {
     TEXT: {},
 };
 
+/**
+ * @enum {string}
+ */
 Resource.LOAD_TYPE = {
     XHR: {},
     IMAGE: {},
@@ -44,6 +51,9 @@ Resource.LOAD_TYPE = {
     VIDEO: {}
 };
 
+/**
+ * @enum {string}
+ */
 Resource.TYPE = {
     UNKNOWN: {},
     JSON: {},
@@ -2221,6 +2231,20 @@ PIXI.filters.AlphaFilter = function(alpha = 1.0){};
  * @constructor
  * @extends PIXI.Filter
  * @memberOf PIXI.filters
+ * @param {PIXI.Sprite} sprite
+ * @param {number} scale
+ */
+PIXI.filters.DisplacementFilter = function(sprite, scale){};
+
+/**
+ * @type {PIXI.Texture}
+ */
+PIXI.filters.DisplacementFilter.prototype.map;
+
+/**
+ * @constructor
+ * @extends PIXI.Filter
+ * @memberOf PIXI.filters
  */
 PIXI.filters.ColorMatrixFilter = function(){};
 
@@ -2366,3 +2390,161 @@ PIXI.ticker.Ticker.prototype.FPS;
  * @type {number}
  */
 PIXI.ticker.Ticker.prototype.minFPS;
+
+/**
+ * type {Object}
+ */
+PIXI.mesh = {};
+
+/**
+ * @constructor
+ * @extends PIXI.Container
+ * @memberOf PIXI.mesh
+ * @param {PIXI.Texture} texture
+ * @param {Float32Array} [vertices]
+ * @param {Float32Array} [uvs]
+ * @param {Uint16Array} [indices]
+ * @param {number} [drawMode]
+ */
+PIXI.mesh.Mesh = function(texture, vertices, uvs, indices, drawMode){};
+
+/**
+ * @type {PIXI.Texture}
+ */
+PIXI.mesh.Mesh.prototype.texture;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.Mesh.prototype.tint;
+
+/**
+ * @param {Object|boolean} [options]
+ */
+PIXI.mesh.Mesh.prototype.destroy = function(options){};
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.Mesh.DRAW_MODES.TRIANGLES;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.Mesh.DRAW_MODES.TRIANGLE_MESH;
+
+/**
+ * @constructor
+ * @extends PIXI.mesh.Mesh
+ * @memberOf PIXI.mesh
+ * @param {PIXI.Texture} texture
+ * @param {Array<PIXI.Point>} points
+ */
+PIXI.mesh.Rope = function(texture, points){};
+
+/**
+ * @constructor
+ * @extends PIXI.mesh.Mesh
+ * @memberOf PIXI.mesh
+ * @param {PIXI.Texture} texture
+ * @param {number} [verticesX]
+ * @param {number} [verticesY]
+ */
+PIXI.mesh.Plane = function(texture, verticesX, verticesY){};
+
+/**
+ * @constructor
+ * @extends PIXI.mesh.Plane
+ * @memberOf PIXI.mesh
+ * @param {PIXI.Texture} texture
+ * @param {number} [leftWidth]
+ * @param {number} [topHeight]
+ * @param {number} [rightWidth]
+ * @param {number} [bottomHeight]
+ */
+PIXI.mesh.NineSlicePlane = function(texture, leftWidth, topHeight, rightWidth, bottomHeight){};
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.width;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.height;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.leftWidth;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.rightWidth;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.topHeight;
+
+/**
+ * @type {number}
+ */
+PIXI.mesh.NineSlicePlane.prototype.bottomHeight;
+
+/**
+ * @constructor
+ * @memberOf PIXI
+ * @param {PIXI.CanvasRenderer} renderer
+ */
+PIXI.MeshSpriteRenderer = function(renderer){};
+
+/**
+ * @param {PIXI.mesh.Mesh} mesh
+ */
+PIXI.MeshSpriteRenderer.prototype.render = function(mesh){};
+
+/**
+ * @type {Object}
+ */
+PIXI.particles = {};
+
+/**
+ * @constructor
+ * @extends PIXI.Container
+ * @memberOf PIXI.particles
+ * @param {number} [maxSize]
+ * @param {Object} [properties]
+ * @param {number} [batchSize]
+ * @param {boolean} [autoResize]
+ */
+PIXI.particles.ParticleContainer = function(maxSize, properties, batchSize, autoResize = false){};
+
+/**
+ * @type {number}
+ */
+PIXI.particles.ParticleContainer.prototype.tint;
+
+/**
+ * @param {Object} properties
+ */
+PIXI.particles.ParticleContainer.prototype.setProperties = function(properties){};
+
+/**
+ * @param {Object|boolean} [options]
+ */
+PIXI.particles.ParticleContainer.prototype.destroy = function(options){};
+
+/**
+ * @constructor
+ * @extends PIXI.Shader
+ * @memberOf PIXI
+ * @param {PIXI.Shader} gl
+ */
+PIXI.ParticleShader = function(gl){};
+
+
+
+
