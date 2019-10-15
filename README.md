@@ -2,14 +2,13 @@ Closure Compiler Externs for PIXI version 4.x
 
 New project structure.
 
-externs
-|
---------- pixi-3.0.8-externs.js
---------- pixi-4.x-externs.js
-|
+externs:
+    
+    pixi-3.0.8-externs.js    
+    pixi-4.x-externs.js
+
 test
----------
-        |
+        
         libs ---- pixi.js / pixi.min.js
         out  ---- index.js (clousured)
         src  ---- index.js
