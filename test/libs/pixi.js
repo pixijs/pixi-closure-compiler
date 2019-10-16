@@ -1,6 +1,6 @@
 /*!
- * pixi.js - v4.8.6
- * Compiled Fri, 15 Feb 2019 18:13:54 UTC
+ * pixi.js - v4.8.8
+ * Compiled Sun, 02 Jun 2019 22:42:46 UTC
  *
  * pixi.js is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -8422,7 +8422,7 @@ exports.__esModule = true;
  * @name VERSION
  * @type {string}
  */
-var VERSION = exports.VERSION = '4.8.6';
+var VERSION = exports.VERSION = '4.8.8';
 
 /**
  * Two Pi.
@@ -12495,6 +12495,8 @@ var CanvasGraphicsRenderer = function () {
                 var holes = data.holes;
                 var outerArea = void 0;
                 var innerArea = void 0;
+                var px = void 0;
+                var py = void 0;
 
                 context.moveTo(points[0], points[1]);
 
@@ -12509,31 +12511,41 @@ var CanvasGraphicsRenderer = function () {
 
                 if (holes.length > 0) {
                     outerArea = 0;
-                    for (var _j = 0; _j < points.length; _j += 2) {
-                        outerArea += points[_j] * points[_j + 3] - points[_j + 1] * points[_j + 2];
+                    px = points[0];
+                    py = points[1];
+                    for (var _j = 2; _j + 2 < points.length; _j += 2) {
+                        outerArea += (points[_j] - px) * (points[_j + 3] - py) - (points[_j + 2] - px) * (points[_j + 1] - py);
                     }
 
                     for (var k = 0; k < holes.length; k++) {
                         points = holes[k].points;
 
-                        innerArea = 0;
-                        for (var _j2 = 0; _j2 < points.length; _j2 += 2) {
-                            innerArea += points[_j2] * points[_j2 + 3] - points[_j2 + 1] * points[_j2 + 2];
+                        if (!points) {
+                            continue;
                         }
 
-                        context.moveTo(points[0], points[1]);
+                        innerArea = 0;
+                        px = points[0];
+                        py = points[1];
+                        for (var _j2 = 2; _j2 + 2 < points.length; _j2 += 2) {
+                            innerArea += (points[_j2] - px) * (points[_j2 + 3] - py) - (points[_j2 + 2] - px) * (points[_j2 + 1] - py);
+                        }
 
                         if (innerArea * outerArea < 0) {
+                            context.moveTo(points[0], points[1]);
+
                             for (var _j3 = 2; _j3 < points.length; _j3 += 2) {
                                 context.lineTo(points[_j3], points[_j3 + 1]);
                             }
                         } else {
-                            for (var _j4 = points.length - 2; _j4 >= 2; _j4 -= 2) {
+                            context.moveTo(points[points.length - 2], points[points.length - 1]);
+
+                            for (var _j4 = points.length - 4; _j4 >= 0; _j4 -= 2) {
                                 context.lineTo(points[_j4], points[_j4 + 1]);
                             }
                         }
 
-                        if (holes[k].closed) {
+                        if (holes[k].close) {
                             context.closePath();
                         }
                     }
@@ -14872,11 +14884,6 @@ var Matrix = function () {
 
         if (delta < 0.00001 || Math.abs(_const.PI_2 - delta) < 0.00001) {
             transform.rotation = skewY;
-
-            if (a < 0 && d >= 0) {
-                transform.rotation += transform.rotation <= 0 ? Math.PI : -Math.PI;
-            }
-
             transform.skew.x = transform.skew.y = 0;
         } else {
             transform.rotation = 0;
@@ -20970,9 +20977,9 @@ function mapWebGLBlendModesToPixi(gl) {
     // TODO - premultiply alpha would be different.
     // add a boolean for that!
     array[_const.BLEND_MODES.NORMAL] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
-    array[_const.BLEND_MODES.ADD] = [gl.ONE, gl.DST_ALPHA];
-    array[_const.BLEND_MODES.MULTIPLY] = [gl.DST_COLOR, gl.ONE_MINUS_SRC_ALPHA];
-    array[_const.BLEND_MODES.SCREEN] = [gl.ONE, gl.ONE_MINUS_SRC_COLOR];
+    array[_const.BLEND_MODES.ADD] = [gl.ONE, gl.ONE];
+    array[_const.BLEND_MODES.MULTIPLY] = [gl.DST_COLOR, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
+    array[_const.BLEND_MODES.SCREEN] = [gl.ONE, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
     array[_const.BLEND_MODES.OVERLAY] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
     array[_const.BLEND_MODES.DARKEN] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
     array[_const.BLEND_MODES.LIGHTEN] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
@@ -20989,8 +20996,8 @@ function mapWebGLBlendModesToPixi(gl) {
 
     // not-premultiplied blend modes
     array[_const.BLEND_MODES.NORMAL_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
-    array[_const.BLEND_MODES.ADD_NPM] = [gl.SRC_ALPHA, gl.DST_ALPHA, gl.ONE, gl.DST_ALPHA];
-    array[_const.BLEND_MODES.SCREEN_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_COLOR];
+    array[_const.BLEND_MODES.ADD_NPM] = [gl.SRC_ALPHA, gl.ONE, gl.ONE, gl.ONE];
+    array[_const.BLEND_MODES.SCREEN_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
 
     return array;
 }
@@ -22953,7 +22960,7 @@ var _path = require('path');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var fragTemplate = ['varying vec2 vTextureCoord;', 'varying vec4 vColor;', 'varying float vTextureId;', 'uniform sampler2D uSamplers[%count%];', 'void main(void){', 'vec4 color;', 'float textureId = floor(vTextureId+0.5);', '%forloop%', 'gl_FragColor = color * vColor;', '}'].join('\n');
+var fragTemplate = ['varying vec2 vTextureCoord;', 'varying vec4 vColor;', 'varying float vTextureId;', 'uniform sampler2D uSamplers[%count%];', 'void main(void){', 'vec4 color;', '%forloop%', 'gl_FragColor = color * vColor;', '}'].join('\n');
 
 function generateMultiTextureShader(gl, maxTextures) {
     var vertexSrc = 'precision highp float;\nattribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\nattribute vec4 aColor;\nattribute float aTextureId;\n\nuniform mat3 projectionMatrix;\n\nvarying vec2 vTextureCoord;\nvarying vec4 vColor;\nvarying float vTextureId;\n\nvoid main(void){\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = aTextureCoord;\n    vTextureId = aTextureId;\n    vColor = aColor;\n}\n';
@@ -22988,7 +22995,7 @@ function generateSampleSrc(maxTextures) {
         }
 
         if (i < maxTextures - 1) {
-            src += 'if(textureId == ' + i + '.0)';
+            src += 'if(vTextureId < ' + i + '.5)';
         }
 
         src += '\n{';

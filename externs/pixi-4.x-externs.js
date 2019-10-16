@@ -29,7 +29,6 @@ var Resource;
 Resource.prototype.progressChunk;
 
 /**
-
  * @enum {string}
  */
 Resource.XHR_RESPONSE_TYPE = {
@@ -65,35 +64,41 @@ Resource.TYPE = {
 };
 
 /**
- * @static
- * @constant
+ * @type {Object}
+ */
+PIXI.TRANSFORM_MODE = {};
+
+/**
+ * @memberOf PIXI
+ * @type {number}
+ */
+PIXI.TRANSFORM_MODE.STATIC;
+
+/**
+ * @memberOf PIXI
+ * @type {number}
+ */
+PIXI.TRANSFORM_MODE.DYNAMIC;
+
+/**
  * @memberOf PIXI
  * @type {string}
  */
 PIXI.VERSION;
 
 /**
- *
- * @static
- * @constant
  * @memberOf PIXI
  * @type {number}
  */
 PIXI.PI_2;
 
 /**
- *
- * @static
- * @constant
  * @memberOf PIXI
  * @type {number}
  */
 PIXI.RAD_TO_DEG;
 
 /**
- *
- * @static
- * @constant
  * @memberOf PIXI
  * @type {number}
  */
@@ -101,16 +106,11 @@ PIXI.DEG_TO_RAD;
 
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.TARGET_FPMS;
 
 /**
- *
- * @static
- * @constant
  * @memberOf PIXI
  * @type {Object}
  */
@@ -121,8 +121,6 @@ PIXI.RENDERER_TYPE = {
 };
 
 /**
- * @static
- * @constant
  * @memberOf PIXI
  * @type {Object}
  */
@@ -131,8 +129,6 @@ PIXI.WRAP_MODES = {
 };
 
 /**
- * @static
- * @constant
  * @memberOf PIXI
  * @type {Object}
  */
@@ -156,10 +152,7 @@ PIXI.BLEND_MODES = {
     LUMINOSITY: {}
 };
 
-
 /**
- * @static
- * @constant
  * @memberOf PIXI
  * @type {Object}
  */
@@ -174,50 +167,37 @@ PIXI.DRAW_MODES = {
 };
 
 /**
- * @static
- * @constant
  * @memberOf PIXI
- * @type {Object}
+ * @enum {number}
  */
-PIXI.SCALE_MODES = {
-    DEFAULT: {},
+PIXI.SCALE_MODES = {    
     LINEAR: {},
     NEAREST: {}
 };
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.RETINA_PREFIX;
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.RESOLUTION;
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.FILTER_RESOLUTION;
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.DEFAULT_RENDER_OPTIONS;
 
 /**
- * @static
- * @constant
  * @memberOf PIXI
- * @type {Object}
+ * @enum {number}
  */
 PIXI.SHAPES = {
     POLY: {},
@@ -228,49 +208,143 @@ PIXI.SHAPES = {
 };
 
 /**
- * @static
- * @constant
  * @deprecated
  */
 PIXI.SPRITE_BATCH_SIZE;
 
 /**
- *
+ * @enum {string}
+ */
+PIXI.PRECISION = {
+    LOW: {},
+    MEDIUM: {},
+    HIGH: {}
+};
+
+PIXI.SCALE_MODES
+
+/**
  * @type {Object}
  */
 PIXI.settings = {};
 
 /**
- *
- * @static
  * @memberOf PIXI.settings
  * @type {number}
  */
 PIXI.settings.TARGET_FPMS;
 
 /**
- *
- * @static
  * @memberOf PIXI.settings
  * @type {RegExp}
  */
 PIXI.settings.RETINA_PREFIX;
 
 /**
- *
- * @static
  * @memberOf PIXI.settings
  * @type {number}
  */
 PIXI.settings.RESOLUTION;
 
 /**
- *
- * @static
+ * @memberOf PIXI.settings
+ * @type {boolean}
+ */
+PIXI.settings.MIPMAP_TEXTURES;
+
+/**
  * @memberOf PIXI.settings
  * @type {number}
  */
 PIXI.settings.FILTER_RESOLUTION;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {number}
+ */
+PIXI.settings.SPRITE_MAX_TEXTURES;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {number}
+ */
+PIXI.settings.SPRITE_BATCH_SIZE;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {Object}
+ */
+PIXI.settings.RENDER_OPTIONS = {
+    view: {},
+    antialias: {},
+    forceFXAA: {},
+    autoResize: {},
+    transparent: {},
+    backgroundColor: {},
+    clearBeforeRender: {},
+    preserveDrawingBuffer: {},
+    roundPixels: {},
+    width: {},
+    height: {},
+    legacy: {},
+}
+
+/**
+ * @memberOf PIXI.settings
+ */
+PIXI.settings.TRANSFORM_MODE;
+
+/**
+ * @memberOf PIXI.settings
+ */
+PIXI.settings.GC_MODES;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {number}
+ */
+PIXI.settings.GC_MAX_IDLE;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {number}
+ */
+PIXI.settings.GC_MAX_CHECK_COUNT;
+
+/**
+ * @memberOf PIXI.settings
+ */
+PIXI.settings.WRAP_MODE;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {PIXI.SCALE_MODES}
+ */
+PIXI.settings.SCALE_MODE;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {PIXI.PRECISION}
+ */
+PIXI.settings.PRECISION_VERTEX;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {PIXI.PRECISION}
+ */
+PIXI.settings.PRECISION_FRAGMENT;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {boolean}
+ */
+PIXI.settings.CAN_UPLOAD_SAME_BUFFER;
+
+/**
+ * @memberOf PIXI.settings
+ * @type {number}
+ */
+PIXI.settings.MESH_CANVAS_PADDING;
 
 /**
  * @return {PIXI.WebGLRenderer|PIXI.CanvasRenderer}
@@ -441,7 +515,6 @@ PIXI.utils.prototype.getSvgSize = function(svgString){};
 PIXI.utils.prototype.skipHello = function(){};
 
 /**
- * @static
  * @memberOf PIXI.utils
  * @param {string} type
  */
@@ -577,15 +650,8 @@ PIXI.Texture.prototype.width;
  */
 PIXI.Texture.prototype.height;
 
-/**
- * @constant
- */
-PIXI.Texture.prototype.EMPTY;
-
-/**
- * @constant
- */
-PIXI.Texture.prototype.WHITE;
+PIXI.Texture.EMPTY;
+PIXI.Texture.WHITE;
 
 /**
  * @param {HTMLCanvasElement} canvas
@@ -975,10 +1041,10 @@ PIXI.Rectangle.prototype.top;
 PIXI.Rectangle.prototype.bottom;
 
 /**
- * @static
- * @constant
+ * @param {PIXI.Rectangle} rectangle
+ * @return {PIXI.Rectangle}
  */
-PIXI.Rectangle.prototype.EMPTY;
+PIXI.Rectangle.prototype.copy = function(rectangle){};
 
 /**
  * @param {number} x
@@ -987,6 +1053,29 @@ PIXI.Rectangle.prototype.EMPTY;
  */
 PIXI.Rectangle.prototype.contains = function(x, y){};
 
+/**
+ * @param {number} paddingX
+ * @param {number} [paddingY]
+ */
+PIXI.Rectangle.prototype.pad = function(paddingX, paddingY){};
+
+/**
+ * @param {PIXI.Rectangle} rectangle
+ */
+PIXI.Rectangle.prototype.fit = function(rectangle){};
+
+/**
+ * @param {PIXI.Rectangle} rectangle
+ */
+PIXI.Rectangle.prototype.enlarge = function(rectangle){};
+
+/**
+ * @param {number} [resolution=1]
+ * @param {number} [eps=0.001]
+ */
+PIXI.Rectangle.prototype.ceil = function(resolution = 1, eps = 0.001){};
+
+PIXI.Rectangle.EMPTY;
 
 /**
  * @constructor
@@ -1183,10 +1272,23 @@ PIXI.Container.prototype.height;
 
 /**
  * @constructor
+ * @memberOf PIXI
+ * @private
+ * @param {PIXI.CanvasRenderer} renderer
+ */
+PIXI.CanvasGraphicsRenderer = function(renderer){};
+
+/**
+ * @constructor
  * @extends PIXI.Container
  * @param {boolean} [nativeLines=false]
  */
 PIXI.Graphics = function(nativeLines = false){};
+
+/**
+ * @return {PIXI.Graphics}
+ */
+PIXI.Graphics.prototype.clone = function(){};
 
 /**
  * @param {number} [color=0]
@@ -1353,6 +1455,11 @@ PIXI.Graphics.prototype.lineStyle = function(lineWidth = 0, color = 0, alpha = 1
  * @param {number} lineAlignment
  */
 PIXI.GraphicsData = function(lineWidth, lineColor, lineAlpha, fillColor, fillAlpha, fill, nativeLines, shape, lineAlignment){};
+
+/**
+ * @param {PIXI.Rectangle|PIXI.Circle} shape
+ */
+PIXI.GraphicsData.prototype.addHole = function(shape){};
 
 /**
  * @constructor
@@ -2347,9 +2454,42 @@ PIXI.ticker.shared;
 /**
  * @constructor
  * @memberOf PIXI.ticker
+ * @param {Function} fn
+ * @param {Function} [context]
+ * @param {number} [priority]
+ * @param {boolean} [once]
+ */
+PIXI.ticker.TickerListener = function(fn, context = null, priority = 0, once = false){};
+
+/**
+ * @param {Function} fn
+ * @param {Function} context
+ * @return {boolean}
+ */
+PIXI.ticker.TickerListener.prototype.match = function(fn, context){};
+
+/**
+ * @param {number} deltaTime
+ * @return {PIXI.ticker.TickerListener}
+ */
+PIXI.ticker.TickerListener.prototype.emit = function(deltaTime){};
+
+/**
+ * @param {PIXI.ticker.TickerListener} previous
+ */
+PIXI.ticker.TickerListener.prototype.connect = function(previous){};
+
+/**
+ * @param {boolean} [hard]
+ * @return {PIXI.ticker.TickerListener}
+ */
+PIXI.ticker.TickerListener.prototype.destroy = function(hard = false){};
+
+/**
+ * @constructor
+ * @memberOf PIXI.ticker
  */
 PIXI.ticker.Ticker = function () {};
-
 
 /**
  * @type {boolean}
