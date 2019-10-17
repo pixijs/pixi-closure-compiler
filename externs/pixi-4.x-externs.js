@@ -170,7 +170,7 @@ PIXI.DRAW_MODES = {
  * @memberOf PIXI
  * @enum {number}
  */
-PIXI.SCALE_MODES = {    
+PIXI.SCALE_MODES = {
     LINEAR: {},
     NEAREST: {}
 };
@@ -2327,6 +2327,69 @@ PIXI.filters = {};
 PIXI.filters.BlurFilter = function(strength, quality, resolution, kernelSize){};
 
 /**
+ * @type {number}
+ */
+PIXI.filters.BlurFilter.prototype.blur;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurFilter.prototype.blurX;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurFilter.prototype.blurY;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurFilter.prototype.blendMode;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurFilter.prototype.quality;
+
+/**
+ * @constructor
+ * @param {number} strength
+ * @param {number} quality
+ * @param {number} resolution
+ * @param {number} [kernelSize]
+ */
+PIXI.filters.BlurXFilter = function(strength, quality, resolution, kernelSize){};
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurXFilter.prototype.blur;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurXFilter.prototype.quality;
+
+/**
+ * @constructor
+ * @param {number} strength
+ * @param {number} quality
+ * @param {number} resolution
+ * @param {number} [kernelSize]
+ */
+PIXI.filters.BlurYFilter = function(strength, quality, resolution, kernelSize){};
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurYFilter.prototype.blur;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.BlurYFilter.prototype.quality;
+
+/**
  * @constructor
  * @extends PIXI.Filter
  * @memberOf PIXI.filters
@@ -2347,6 +2410,30 @@ PIXI.filters.DisplacementFilter = function(sprite, scale){};
  * @type {PIXI.Texture}
  */
 PIXI.filters.DisplacementFilter.prototype.map;
+
+/**
+ * @constructor
+ * @extends PIXI.Filter
+ * @memberOf PIXI.filters
+ */
+PIXI.filters.FXAAFilter = function(){};
+
+/**
+ * @constructor
+ * @extends PIXI.Filter
+ * @memberOf PIXI.filters
+ */
+PIXI.filters.NoiseFilter = function(){};
+
+/**
+ * @type {number}
+ */
+PIXI.filters.NoiseFilter.prototype.noise;
+
+/**
+ * @type {number}
+ */
+PIXI.filters.NoiseFilter.prototype.seed;
 
 /**
  * @constructor
