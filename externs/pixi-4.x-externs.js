@@ -404,7 +404,8 @@ PIXI.TextureManager = function(renderer){};
  * @param {boolean} [skipRemove]
  */
 PIXI.TextureManager.prototype.destroyTexture = function(texture, skipRemove){};
-
+PIXI.TextureManager.prototype.removeAll = function(){};
+PIXI.TextureManager.prototype.destroy = function(){};
 /**
  *
  * @type {Object}
@@ -2539,6 +2540,38 @@ PIXI.ticker = {};
 PIXI.ticker.shared;
 
 /**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.update = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ * @return {PIXI.ticker.Ticker}
+ */
+PIXI.ticker.prototype.add = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ * @return {PIXI.ticker.Ticker}
+ */
+PIXI.ticker.prototype.addOnce = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.start = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.stop = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.destroy = function(){};
+
+/**
  * @constructor
  * @memberOf PIXI.ticker
  * @param {Function} fn
@@ -2644,6 +2677,12 @@ PIXI.mesh.Mesh.prototype.texture;
  * @type {number}
  */
 PIXI.mesh.Mesh.prototype.tint;
+
+/**
+ * @param {PIXI.Point} points
+ * @return {boolean}
+ */
+PIXI.mesh.Mesh.prototype.containsPoint = function(points){};
 
 /**
  * @param {Object|boolean} [options]
