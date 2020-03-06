@@ -552,6 +552,50 @@ PIXI.utils.BaseTextureCache;
  */
 PIXI.utils.sign = function(){};
 
+/**
+ * @memberOf PIXI.utils
+ * @constructor
+ */
+PIXI.utils.EventEmitter = function(){};
+
+/**
+ * @param event
+ * @param args
+ * @return {boolean}
+ */
+PIXI.utils.EventEmitter.prototype.emit = function(event, args){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.addListener = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.on = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.once = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.removeListener = function(event, fn, context, once){};
+
+/**
+ * @memberOf PIXI.utils
+ */
 PIXI.utils.mixins = {};
 
 /**
