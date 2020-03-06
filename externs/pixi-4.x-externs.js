@@ -2444,6 +2444,12 @@ PIXI.filters.NoiseFilter.prototype.seed;
 PIXI.filters.ColorMatrixFilter = function(){};
 
 /**
+ * @param {number} scale
+ * @param {boolean} multiply
+ */
+PIXI.filters.ColorMatrixFilter.prototype.greyscale = function(scale, multiply){};
+
+/**
  * @param {boolean} multiply
  */
 PIXI.filters.ColorMatrixFilter.prototype.blackAndWhite = function(multiply){};
