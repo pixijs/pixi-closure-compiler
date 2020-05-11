@@ -404,7 +404,8 @@ PIXI.TextureManager = function(renderer){};
  * @param {boolean} [skipRemove]
  */
 PIXI.TextureManager.prototype.destroyTexture = function(texture, skipRemove){};
-
+PIXI.TextureManager.prototype.removeAll = function(){};
+PIXI.TextureManager.prototype.destroy = function(){};
 /**
  *
  * @type {Object}
@@ -551,6 +552,50 @@ PIXI.utils.BaseTextureCache;
  */
 PIXI.utils.sign = function(){};
 
+/**
+ * @memberOf PIXI.utils
+ * @constructor
+ */
+PIXI.utils.EventEmitter = function(){};
+
+/**
+ * @param event
+ * @param args
+ * @return {boolean}
+ */
+PIXI.utils.EventEmitter.prototype.emit = function(event, args){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.addListener = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.on = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.once = function(event, fn, context){};
+
+/**
+ * @param event
+ * @param fn
+ * @param context
+ */
+PIXI.utils.EventEmitter.prototype.removeListener = function(event, fn, context, once){};
+
+/**
+ * @memberOf PIXI.utils
+ */
 PIXI.utils.mixins = {};
 
 /**
@@ -2443,6 +2488,12 @@ PIXI.filters.NoiseFilter.prototype.seed;
 PIXI.filters.ColorMatrixFilter = function(){};
 
 /**
+ * @param {number} scale
+ * @param {boolean} multiply
+ */
+PIXI.filters.ColorMatrixFilter.prototype.greyscale = function(scale, multiply){};
+
+/**
  * @param {boolean} multiply
  */
 PIXI.filters.ColorMatrixFilter.prototype.blackAndWhite = function(multiply){};
@@ -2537,6 +2588,38 @@ PIXI.ticker = {};
  * @memberOf PIXI.ticker
  */
 PIXI.ticker.shared;
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.update = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ * @return {PIXI.ticker.Ticker}
+ */
+PIXI.ticker.prototype.add = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ * @return {PIXI.ticker.Ticker}
+ */
+PIXI.ticker.prototype.addOnce = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.start = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.stop = function(){};
+
+/**
+ * @memberOf PIXI.ticker.Ticker
+ */
+PIXI.ticker.prototype.destroy = function(){};
 
 /**
  * @constructor
@@ -2644,6 +2727,12 @@ PIXI.mesh.Mesh.prototype.texture;
  * @type {number}
  */
 PIXI.mesh.Mesh.prototype.tint;
+
+/**
+ * @param {PIXI.Point} points
+ * @return {boolean}
+ */
+PIXI.mesh.Mesh.prototype.containsPoint = function(points){};
 
 /**
  * @param {Object|boolean} [options]
